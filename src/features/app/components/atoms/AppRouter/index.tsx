@@ -17,7 +17,7 @@ const AppRouter: React.FC = () => {
 
   useEffect(() => {
     if (["/", "/login"].includes(location?.pathname)) {
-      if (authData.isLogin !== false) {
+      if (authData.isLogin) {
         navigate("/");
       } else {
         navigate("/login");
