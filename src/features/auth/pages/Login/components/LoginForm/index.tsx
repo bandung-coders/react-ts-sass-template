@@ -33,7 +33,7 @@ const LoginForm: React.FC = () => {
    * @returns Promise<void>
    */
   const onSubmitForm = useCallback(
-    async (values: ILoginBody, { resetForm }): Promise<void> => {
+    async (values: ILoginBody, { resetForm }: any): Promise<void> => {
       try {
         const response = await login({ body: values }).unwrap();
         dispatch(authSetAuthenticatedUser(response));
