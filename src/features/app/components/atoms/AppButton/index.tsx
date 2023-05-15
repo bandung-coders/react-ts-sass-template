@@ -1,9 +1,6 @@
 // React
 import React, { useCallback } from "react";
 
-// React Router DOM
-import { useNavigate } from "react-router-dom";
-
 // React SVG
 import { ReactSVG } from "react-svg";
 
@@ -12,7 +9,6 @@ import { type IAppButtonProps, button } from "./cva";
 
 const AppButton: React.FC<IAppButtonProps> = ({
   children,
-  navigate,
   className,
   rounded,
   variant,
@@ -26,8 +22,6 @@ const AppButton: React.FC<IAppButtonProps> = ({
   type,
   onClick,
 }) => {
-  const navigateRoute = useNavigate();
-
   const buttonClassName = button({
     className,
     rounded,
@@ -44,10 +38,9 @@ const AppButton: React.FC<IAppButtonProps> = ({
    */
   const onClickButton = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>): void => {
-      navigate !== undefined && navigateRoute(navigate);
       loading === false && onClick?.(event);
     },
-    [loading, navigate, navigateRoute, onClick]
+    [loading, onClick]
   );
 
   return (

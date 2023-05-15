@@ -47,7 +47,6 @@ export const button = cva("btn", {
 export interface IAppButtonProps extends VariantProps<typeof button> {
   children: string;
   className?: string;
-  navigate?: string;
   rounded?: "small" | "large";
   variant?: TColor;
   size?: "small" | "medium" | "large";
