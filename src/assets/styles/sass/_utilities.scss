@@ -86,6 +86,14 @@ $space-values: (
   }
 }
 
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
 // Grid
 .d-grid {
   display: grid;
@@ -192,5 +200,12 @@ $breakpoints: (
     }
   } @else {
     @error "Breakpoint #{$breakpoint} not found in $breakpoints.";
+  }
+}
+
+// Cursor
+.cursor {
+  &-pointer {
+    cursor: pointer;
   }
 }

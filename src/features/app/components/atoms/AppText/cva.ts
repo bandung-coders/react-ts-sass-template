@@ -7,6 +7,7 @@ import { type TColor } from "@/features/app/interfaces";
 export const text = cva("text", {
   variants: {
     size: {
+      xsmall: ["text--xsmall"],
       small: ["text--small"],
       medium: ["text--medium"],
       large: ["text--large"],
@@ -22,7 +23,13 @@ export const text = cva("text", {
       warning: ["color-warning"],
       facebook: ["color-facebook"],
       spotify: ["color-spotify"],
+      "white-1": ["color-white-1"],
       "dark-1": ["color-dark-1"],
+      "gray-1": ["color-gray-1"],
+      "gray-2": ["color-gray-2"],
+      "gray-3": ["color-gray-3"],
+      "gray-4": ["color-gray-4"],
+      "gray-5": ["color-gray-5"],
       blank: ["color-transparent"],
     },
     weight: {
@@ -43,7 +50,7 @@ export const text = cva("text", {
 export interface IAppTextProps extends VariantProps<typeof text> {
   className?: string;
   children: string | number;
-  size?: "small" | "medium" | "large" | "xlarge" | "2xlarge";
+  size?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "2xlarge";
   color?: TColor;
   weight?: "normal" | "bold" | "semibold" | "xbold" | "2xbold";
   onClick?: () => void;

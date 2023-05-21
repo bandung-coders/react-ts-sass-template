@@ -134,6 +134,11 @@ $btn-sizes: (
     color: $white-1-color;
   }
 
+  &--gray-5 {
+    background-color: $gray-5-color;
+    color: $white-1-color;
+  }
+
   @each $name, $size in $btn-rounded {
     &--rounded-#{$name} {
       border-radius: $size;
