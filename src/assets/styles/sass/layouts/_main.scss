@@ -25,7 +25,7 @@ $footer-height: 72px;
     flex-direction: column;
     gap: 10px;
     flex-basis: 330px;
-    height: calc(100vh - $footer-height - 10px);
+    height: calc(100vh - 10px);
   }
 
   &__main-content {
@@ -56,6 +56,13 @@ $footer-height: 72px;
   &__content {
     @extend .sidebar__header;
     padding: 10px;
-    flex: 1;
+    height: calc(100%);
+  }
+
+  &__playlists {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: auto;
+    height: calc(100% - 170px);
   }
 }
