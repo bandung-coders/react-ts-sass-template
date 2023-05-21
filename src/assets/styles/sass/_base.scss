@@ -23,6 +23,11 @@ body {
   font-family: $font-family-main;
 }
 
+a,
+a:visited {
+  text-decoration: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

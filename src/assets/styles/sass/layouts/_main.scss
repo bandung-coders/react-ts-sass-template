@@ -1,6 +1,13 @@
+$footer-height: 72px;
+
 .app {
+  position: relative;
   display: flex;
+  gap: 10px;
+  padding: 10px;
   height: 100vh;
+  background-color: $dark-2-color;
+  color: $white-1-color;
 
   &__content {
     display: flex;
@@ -14,9 +21,11 @@
   }
 
   &__sidebar {
-    @extend .px-6;
-    flex-basis: 240px;
-    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-basis: 330px;
+    height: calc(100vh - $footer-height - 10px);
   }
 
   &__main-content {
@@ -25,7 +34,28 @@
   }
 
   &__footer {
-    @extend .p-7;
-    background-color: $gray-2-color;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: $footer-height;
+    background-color: $dark-2-color;
+  }
+}
+
+.sidebar {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: $dark-3-color;
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  &__content {
+    @extend .sidebar__header;
+    padding: 10px;
+    flex: 1;
   }
 }

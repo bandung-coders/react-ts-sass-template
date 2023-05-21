@@ -1,4 +1,5 @@
 $text-sizes: (
+  xsmall: 11px,
   small: 14px,
   medium: $font-size-base,
   large: 18px,
@@ -41,5 +42,9 @@ $text-aligns: (
 
   &--underline {
     text-decoration: underline;
+  }
+
+  &--spacing-0 {
+    letter-spacing: 0;
   }
 }
