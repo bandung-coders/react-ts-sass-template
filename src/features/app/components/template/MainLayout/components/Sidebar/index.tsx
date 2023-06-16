@@ -1,5 +1,5 @@
 // React
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 // Components
 import {
@@ -36,7 +36,7 @@ const Sidebar: React.FC = () => {
         <div className="sidebar__playlists">
           <Filter />
 
-          {isLoadingHomePlaylists && <div>Loading anjir ...</div>}
+          {isLoadingHomePlaylists && <div>Loading ...</div>}
 
           <div className="d-flex flex-column gap-4 overflow-y-scroll">
             {dataHomePlaylists?.data.map(
