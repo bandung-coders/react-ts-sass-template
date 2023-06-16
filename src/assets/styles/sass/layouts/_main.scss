@@ -51,6 +51,7 @@ $footer-height: 72px;
     background-color: $dark-3-color;
     padding: 20px;
     border-radius: 6px;
+    height: 112px;
   }
 
   &__content {
@@ -65,4 +66,30 @@ $footer-height: 72px;
     width: auto;
     height: calc(100% - 170px);
   }
+}
+
+.playtime {
+  content: "";
+  position: relative;
+  width: 480px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: $dark-4-color;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 480px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: $white-1-color;
+    left: -80px;
+  }
+}
+
+.volume {
+  @extend .playtime;
+  width: 93px;
 }
