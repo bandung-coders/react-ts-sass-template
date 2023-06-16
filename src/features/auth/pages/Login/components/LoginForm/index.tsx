@@ -66,11 +66,7 @@ const LoginForm: React.FC = () => {
             name="user"
             label="Email address or username"
             placeholder="Email address or username"
-            errorMessage={
-              errors.user !== undefined &&
-              touched.user !== undefined &&
-              errors.user
-            }
+            errorMessage={errors.user && touched.user && errors.user}
           />
 
           <Field
@@ -80,9 +76,7 @@ const LoginForm: React.FC = () => {
             label="Password"
             placeholder="Password"
             errorMessage={
-              errors.password !== undefined &&
-              touched.password !== undefined &&
-              errors.password
+              errors.password && touched.password && errors.password
             }
           />
 

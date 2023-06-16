@@ -7,8 +7,8 @@ const MainLayout: React.FC = () => (
     <div className="app__content">
       <Navbar />
       <Content />
-      <Footer />
     </div>
+    <Footer />
   </div>
 );
 

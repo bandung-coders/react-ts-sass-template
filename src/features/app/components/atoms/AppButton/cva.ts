@@ -11,6 +11,7 @@ export const button = cva("btn", {
       large: ["btn--rounded-large"],
     },
     variant: {
+      plain: ["btn--plain"],
       primary: ["btn--primary"],
       secondary: ["btn--secondary"],
       success: ["btn--success"],
@@ -20,6 +21,7 @@ export const button = cva("btn", {
       facebook: ["btn--facebook"],
       spotify: ["btn--spotify"],
       "dark-1": ["btn--dark-1"],
+      "dark-4": ["btn--dark-4"],
       "gray-5": ["btn--gray-5"],
       blank: ["btn--transparent"],
     },
