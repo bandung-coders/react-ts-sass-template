@@ -1,12 +1,7 @@
+// RTK
 import { useLazyHomePlaylistsQuery } from "../redux/rtk";
 
-interface HomeHookData {
-  fetchHomePlaylists: (payload: any) => void;
-  dataHomePlaylists: any | undefined;
-  isLoadingHomePlaylists: boolean;
-}
-
-export const useHome = (): HomeHookData => {
+export const useHome = () => {
   const [
     fetchHomePlaylists,
     { data: dataHomePlaylists, isLoading: isLoadingHomePlaylists },
