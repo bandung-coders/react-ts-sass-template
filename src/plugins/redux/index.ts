@@ -15,13 +15,13 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-// Middleware error
-import { rtkQueryErrorLogger } from "./middleware";
+// Middlewares
+import { rtkQueryErrorLoggerMiddleware } from "./middleware";
 
-// Api
+// API
 import { authApi } from "@/features/auth/redux/rtk";
 
-// Reducer
+// Reducers
 import { reducers } from "./combineReducer";
 
 // Config for Redux Persist
@@ -44,7 +44,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(rtkQueryErrorLogger, authApi.middleware),
+    }).concat(rtkQueryErrorLoggerMiddleware, authApi.middleware),
 });
 
 // Persist Store

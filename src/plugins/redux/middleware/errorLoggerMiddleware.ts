@@ -8,7 +8,7 @@ import { popupShowToast } from "@/features/app/redux/popupSlice";
 /**
  * Log a warning and show a toast!
  */
-export const rtkQueryErrorLogger: Middleware =
+export const rtkQueryErrorLoggerMiddleware: Middleware =
   ({ dispatch }) =>
   (next) =>
   (action) => {
