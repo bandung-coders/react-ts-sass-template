@@ -1,0 +1,31 @@
+// Variabel
+$skeleton-primary-color: rgb(179, 179, 179, 0.2);
+$skeleton-animation-duration: 1s;
+$skeleton-animation-easing: ease-in-out;
+
+.skeleton {
+  overflow-x: hidden;
+  background-color: $gray-5-color;
+
+  &__list {
+    background-color: $skeleton-primary-color;
+    overflow: hidden;
+    position: relative;
+    animation: skeleton-animation $skeleton-animation-duration
+      $skeleton-animation-easing infinite;
+    width: auto;
+
+    @keyframes skeleton-animation {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &--rounded {
+    border-radius: 4px;
+  }
+}

@@ -1,25 +1,26 @@
 // React
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 
 // Components
+import { AppSkeleton } from "@/features/app/components";
 import {
   Filter,
   HeaderItem,
   SidebarPlaylist,
+  SidebarPlaylistLoading,
   TrackType,
   YourLibrary,
 } from "./components";
 
 // Custom hooks
 import { useHome } from "@/features/home/hooks";
-import { type ISidebarPlaylist } from "./components/SidebarPlaylist/interfaces";
 
 const Sidebar: React.FC = () => {
   const { fetchHomePlaylists, dataHomePlaylists, isLoadingHomePlaylists } =
     useHome();
 
   useEffect(() => {
-    fetchHomePlaylists(false);
+    void fetchHomePlaylists({ params: {} });
   }, [fetchHomePlaylists]);
 
   return (
@@ -36,19 +37,17 @@ const Sidebar: React.FC = () => {
         <div className="sidebar__playlists">
           <Filter />
 
-          {isLoadingHomePlaylists && <div>Loading ...</div>}
+          {isLoadingHomePlaylists && <SidebarPlaylistLoading />}
 
           <div className="d-flex flex-column gap-4 overflow-y-scroll">
-            {dataHomePlaylists?.data.map(
-              ({ id, title, artist, image }: ISidebarPlaylist) => (
-                <SidebarPlaylist
-                  key={id}
-                  title={title}
-                  artist={artist}
-                  image={image}
-                />
-              )
-            )}
+            {dataHomePlaylists?.data.map(({ id, title, artist, image }) => (
+              <SidebarPlaylist
+                key={id}
+                title={title}
+                artist={artist}
+                image={image}
+              />
+            ))}
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ export const useHome = () => {
   ] = useLazyHomePlaylistsQuery();
 
   return {
+    // Lazy
     fetchHomePlaylists,
     dataHomePlaylists,
     isLoadingHomePlaylists,

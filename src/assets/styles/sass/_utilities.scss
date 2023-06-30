@@ -183,6 +183,10 @@ $flex-wrap: (
   }
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 // Breakpoints
 $breakpoints: (
   xs: 0px,
@@ -218,5 +222,13 @@ $breakpoints: (
 
   &-x-scroll {
     overflow-x: scroll;
+  }
+
+  &-y-hidden {
+    overflow-y: hidden;
+  }
+
+  &-x-hidden {
+    overflow-x: hidden;
   }
 }

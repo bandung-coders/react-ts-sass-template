@@ -2,16 +2,16 @@
 import serviceApi from "@/plugins/redux/service";
 
 // Interfaces
-import { type IRTKPayload } from "@/features/app/interfaces/rtk";
-import { type ILoginBody, type ILoginResponse } from "../interfaces/api";
+import { type IAppBody } from "@/features/app/interfaces";
+import { type ILoginResponse, type ILoginBody } from "./interfaces";
 
 export const authApi = serviceApi.injectEndpoints({
   endpoints: (builder) => ({
-    login: builder.mutation<ILoginResponse, IRTKPayload<ILoginBody>>({
-      query: (payload) => ({
+    login: builder.mutation<ILoginResponse, IAppBody<ILoginBody>>({
+      query: ({ body }) => ({
+        body,
         url: "/auth/login",
         method: "POST",
-        body: payload.body,
       }),
       transformResponse: ({ accessToken, userData }: ILoginResponse) => ({
         accessToken,

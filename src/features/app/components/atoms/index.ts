@@ -6,3 +6,4 @@ export { default as AppModalConfirm } from "./AppModalConfirm";
 export { default as AppButton } from "./AppButton";
 export { default as AppImage } from "./AppImage";
 export { default as AppSvg } from "./AppSVG";
+export { default as AppSkeleton } from "./AppSkeleton";

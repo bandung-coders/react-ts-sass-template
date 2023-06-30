@@ -1,4 +1,4 @@
-import { type IUserDataResponse } from "../interfaces/api";
+import { type IUserDataResponse } from "../rtk/interfaces";
 
 export interface IAuth {
   accessToken: string | null;

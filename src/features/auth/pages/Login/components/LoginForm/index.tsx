@@ -14,7 +14,7 @@ import {
 } from "@/features/app/components";
 
 // Interfaces
-import { type ILoginBody } from "@/features/auth/interfaces/api";
+import { type ILoginBody } from "@/features/auth/interfaces/rtk";
 
 // Custom hooks
 import { useAuth } from "@/features/auth/hooks";
