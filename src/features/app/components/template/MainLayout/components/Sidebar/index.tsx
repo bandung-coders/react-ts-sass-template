@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 
 // Components
-import { AppSkeleton } from "@/features/app/components";
 import {
   Filter,
   HeaderItem,
@@ -37,18 +36,20 @@ const Sidebar: React.FC = () => {
         <div className="sidebar__playlists">
           <Filter />
 
-          {isLoadingHomePlaylists && <SidebarPlaylistLoading />}
-
-          <div className="d-flex flex-column gap-4 overflow-y-scroll">
-            {dataHomePlaylists?.data.map(({ id, title, artist, image }) => (
-              <SidebarPlaylist
-                key={id}
-                title={title}
-                artist={artist}
-                image={image}
-              />
-            ))}
-          </div>
+          {isLoadingHomePlaylists ? (
+            <SidebarPlaylistLoading />
+          ) : (
+            <div className="d-flex flex-column gap-4 overflow-y-scroll">
+              {dataHomePlaylists?.data.map(({ id, title, artist, image }) => (
+                <SidebarPlaylist
+                  key={id}
+                  title={title}
+                  artist={artist}
+                  image={image}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </aside>

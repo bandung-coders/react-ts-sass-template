@@ -4,7 +4,11 @@ import { useLazyHomePlaylistsQuery } from "../redux/rtk";
 export const useHome = () => {
   const [
     fetchHomePlaylists,
-    { data: dataHomePlaylists, isLoading: isLoadingHomePlaylists },
+    {
+      data: dataHomePlaylists,
+      isLoading: isLoadingHomePlaylists,
+      isFetching: isFetchingHomePlaylists,
+    },
   ] = useLazyHomePlaylistsQuery();
 
   return {
@@ -12,5 +16,6 @@ export const useHome = () => {
     fetchHomePlaylists,
     dataHomePlaylists,
     isLoadingHomePlaylists,
+    isFetchingHomePlaylists,
   };
 };

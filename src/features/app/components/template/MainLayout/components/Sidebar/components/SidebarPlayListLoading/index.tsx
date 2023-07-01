@@ -8,7 +8,7 @@ const SidebarPlaylistLoading = () => {
           <AppSkeleton width="47px" height="47px" rounded />
           <div className="d-flex flex-column flex-1 justify-between">
             <AppSkeleton height="20px" rounded />
-            <AppSkeleton height="20px" rounded />
+            <AppSkeleton width="170px" height="20px" rounded />
           </div>
         </div>
       ))}

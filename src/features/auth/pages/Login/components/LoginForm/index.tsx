@@ -14,7 +14,7 @@ import {
 } from "@/features/app/components";
 
 // Interfaces
-import { type ILoginBody } from "@/features/auth/interfaces/rtk";
+import { type ILoginBody } from "@features/auth/redux/rtk/interfaces";
 
 // Custom hooks
 import { useAuth } from "@/features/auth/hooks";
@@ -34,6 +34,8 @@ const LoginForm: React.FC = () => {
    */
   const onSubmitForm = useCallback(
     async (values: ILoginBody, { resetForm }: any): Promise<void> => {
+      console.log(resetForm);
+
       try {
         const response = await login({ body: values }).unwrap();
         dispatch(authSetAuthenticatedUser(response));
